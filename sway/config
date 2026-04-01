@@ -56,6 +56,9 @@ exec_always swaybg -i /etc/sway/background.jpg -m fill
     # 打开终端
     bindsym $mod+Return exec $term
 
+    # 截图
+    bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
+
     # 关闭当前窗口
     bindsym $mod+Shift+q kill
 
