@@ -7,7 +7,7 @@ set $up k
 set $right l
 
 # Kitty终端
-set $term kitty -e sh -c 'fastfetch; exec $SHELL -l'
+set $term kitty
 # wofi引用启动器
 set $menu wofi --show drun
 
@@ -15,7 +15,6 @@ set $menu wofi --show drun
 exec_always fcitx5 -d
 
 # 设置背景
-#exec_always swaybg -c '#0EAC80'
 exec_always swaybg -i /etc/sway/background.jpg -m fill
 
 ### Idle configuration
@@ -193,8 +192,8 @@ bindsym $mod+r mode "resize"
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
     bindsym XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     # Special keys to adjust brightness via brightnessctl
-    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
+    bindsym XF86MonBrightnessUp exec brightnessctl set 2%+
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 bar {
@@ -202,5 +201,6 @@ bar {
     position top
     mode invisible
 }
+default_border none 
 
 include /etc/sway/config.d/*
