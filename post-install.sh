@@ -16,6 +16,11 @@ fi
 info "正在添加alias ll=\"ls -al\"到/etc/bash.bashrc中..."
 replace_key_value 'alias ll="ls -al"' " " "/etc/bash.bashrc" ' '
 
+# 添加默认编辑器为vim到 /etc/bash.bashrc中,如果已经添加则跳过
+info "正在添加默认编辑器为vim到 /etc/bash.bashrc中..."
+pacman -S --noconfirm vim
+replace_key_value 'export EDITOR' "vim" "/etc/bash.bashrc" "="
+
 
 # 设置时区为上海,并且同步时间
 info "正在设置时区为上海..."
@@ -81,6 +86,14 @@ replace_key_value 'export QT_IM_MODULE=fcitx' ' ' "/etc/profile.d/fcitx5.sh" ' '
 replace_key_value 'export XMODIFIERS=@im=fcitx' ' ' "/etc/profile.d/fcitx5.sh" ' '
 replace_key_value 'export SDL_IM_MODULE=fcitx' ' ' "/etc/profile.d/fcitx5.sh" ' '
 
+
+# 添加TLP电源管理工具,并且启用服务,设置电池充电阈值
+info "正在安装TLP电源管理工具..."
+pacman -S --noconfirm tlp
+info "正在启用TLP服务..."
+systemctl enable --now tlp
+info "正在设置电池充电阈值..."
+tlp setcharge 70 80 BAT0
 
 # done
 info "所有操作完成！"

@@ -201,6 +201,6 @@ bar {
     position top
     mode invisible
 }
-default_border none 
+default_border pixel 2
 
 include /etc/sway/config.d/*
