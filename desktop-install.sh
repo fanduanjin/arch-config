@@ -10,10 +10,10 @@
 '
 source ./common.sh
 
-echo -e "${GREEN}正在安装桌面环境...${NC}"
+info "正在安装桌面环境..."
 # 检查stow是否安装,如果没有安装则安装
 if ! command -v stow &> /dev/null; then
-    echo -e "${GREEN}正在安装stow...${NC}"
+    info "正在安装stow..."
     pacman -S --noconfirm stow
 fi
 
@@ -21,9 +21,9 @@ fi
 # 安装所需包
 PACKAGES="sway waybar wofi yazi kitty fastfetch grim slurp swappy"
 pacman -S --noconfirm $PACKAGES
-echo -e "${GREEN} ${PACKAGES} 安装完毕...${NC}"
+info " ${PACKAGES} 安装完毕..."
 
-echo -e "${GREEN}更新stow目录...${NC}"
+info "更新stow目录..."
 declare -A STOW_DIRS=(
     ["/etc/sway"]="sway"
     ["/etc/xdg/kitty"]="kitty"  
@@ -42,6 +42,6 @@ done
 
 
  
-echo -e "${GREEN}安装完毕...${NC}"
+info "安装完毕..."
 
 
