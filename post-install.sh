@@ -76,10 +76,10 @@ systemctl --user enable --now pipewire
 info "正在安装fcitx5..."
 pacman -S --noconfirm fcitx5 fcitx5-chinese-addons
 info "正在设置环境变量..."
-replace_key_value 'export GTK_IM_MODULE=fcitx' "" "/etc/profile.d/fcitx5.sh" ' '
-replace_key_value 'export QT_IM_MODULE=fcitx' "" "/etc/profile.d/fcitx5.sh" ' '
-replace_key_value 'export XMODIFIERS=@im=fcitx' "" "/etc/profile.d/fcitx5.sh" ' '
-replace_key_value 'export SDL_IM_MODULE=fcitx' "" "/etc/profile.d/fcitx5.sh" ' '
+replace_key_value 'export GTK_IM_MODULE=fcitx' ' ' "/etc/profile.d/fcitx5.sh" ' '
+replace_key_value 'export QT_IM_MODULE=fcitx' ' ' "/etc/profile.d/fcitx5.sh" ' '
+replace_key_value 'export XMODIFIERS=@im=fcitx' ' ' "/etc/profile.d/fcitx5.sh" ' '
+replace_key_value 'export SDL_IM_MODULE=fcitx' ' ' "/etc/profile.d/fcitx5.sh" ' '
 
 
 # done

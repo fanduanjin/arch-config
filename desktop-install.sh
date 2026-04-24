@@ -2,7 +2,7 @@
 : '
 此脚本用于安装桌面环境
 - 窗口管理器: Sway
-- 状态栏: Waybar
+- 状3态栏: Waybar
 - 应用程序启动器: Wofi
 - 文件管理器: Yazi
 - 终端模拟器: Kitty
@@ -19,7 +19,7 @@ fi
 
 
 # 安装所需包
-PACKAGES="sway waybar wofi yazi kitty fastfetch grim slurp swappy"
+PACKAGES="sway swaybg waybar wofi yazi kitty fastfetch grim slurp swappy"
 pacman -S --noconfirm $PACKAGES
 info " ${PACKAGES} 安装完毕..."
 

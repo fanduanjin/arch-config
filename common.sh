@@ -56,7 +56,4 @@ replace_key_value(){
         echo "$key$sep$value" >> "$file"
     fi
 }
-
-
-
-replace_key_value 'alias ll="ls -al"' "#" "/etc/profile.d/test.sh" '#'
+#replace_key_value 'alias ll="ls -al"' "#" "/etc/profile.d/test.sh" '#'
